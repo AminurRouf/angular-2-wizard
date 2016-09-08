@@ -8,12 +8,12 @@ export class Confirmation extends React.Component<IFeesClaimExpenses, {}> {
             <h1>Confirmation</h1>
 
             <p>This is a simple example of CONFIRMATION component.</p>
-            <p> Last Name : {this.props.lastName} </p>
+            <p> Last Name : {this.props.user.lastName} </p>
          
-         
+            <li className="form-footer">
+                <button className="btn -primary pull-right" onClick={() => { this.props.previousStep() } }>Back</button>
+            </li>
         </div>;
     }
-
-
-
+    
 }
