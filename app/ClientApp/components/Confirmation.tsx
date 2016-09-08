@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {IFeesClaimExpenses} from "../models/fees-claim-expenses";
+import {IFeesClaimExpensesProps} from "../models/fees-claim-expenses";
 
-export class Confirmation extends React.Component<IFeesClaimExpenses, {}> {
+export class Confirmation extends React.Component<IFeesClaimExpensesProps, {}> {
 
     public render() {
         return <div>

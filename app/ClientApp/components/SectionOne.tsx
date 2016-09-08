@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import {IFeesClaimExpenses, IUser} from "../models/fees-claim-expenses";
+import {IFeesClaimExpensesProps, IUser} from "../models/fees-claim-expenses";
 
-export class SectionOne extends React.Component<IFeesClaimExpenses, {}> {
+export class SectionOne extends React.Component<IFeesClaimExpensesProps, {}> {
      private user: IUser;
     constructor(props) {
         super(props);
-        this.user = { lastName: props.user.lastName}
+        this.user = { lastName: props.user.lastName, firstName: props.user.firstName}
     }
 
     public render() {
@@ -25,7 +25,6 @@ export class SectionOne extends React.Component<IFeesClaimExpenses, {}> {
     }
 
     nextStep = () => {
-        
         let lastNameInput = ReactDom.findDOMNode<HTMLInputElement>(this.refs["lastName"]);
         this.user.lastName = lastNameInput.value;
         this.props.saveValues(this.user);

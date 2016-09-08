@@ -1,25 +1,26 @@
 import * as React from 'react';
 import { SectionOne} from "./SectionOne";
 import { Confirmation} from "./Confirmation";
-import {IFeesClaimExpenses, IUser } from "../models/fees-claim-expenses";
+import {IFeesClaimExpensesProps, IUser } from "../models/fees-claim-expenses";
 
+interface IStepState {
+    currentStep: number;
+}
 
-export class Home extends React.Component<IFeesClaimExpenses, any> {
+export class Home extends React.Component<IFeesClaimExpensesProps, IStepState> {
    public user: IUser;
-   public fees: IFeesClaimExpenses;
-
+  
     constructor(props) {
         super(props);
-        this.state = { step: 1 };
-        this.user = { lastName: '' };
+        this.state = { currentStep: 1 };
+        this.user = { lastName: '', firstName: '' };
     }
     
-
     public render() {
         return <div>
             <h1>Fees Claim Expenses Form</h1>
             <main>
-                <span className="progress-step">Step {this.state.step}</span>
+                <span className="progress-step">Step {this.state.currentStep}</span>
 
                 {this.showStep() }
             </main>
@@ -27,23 +28,21 @@ export class Home extends React.Component<IFeesClaimExpenses, any> {
     }
 
     nextStep=()=> {
-        this.setState({ step: this.state.step + 1 });
+        this.setState({ currentStep: this.state.currentStep+1 });
     };
 
     previousStep = () => {
-        this.setState({ step: this.state.step - 1 });
+        this.setState({ currentStep: this.state.currentStep-1 });
     };
 
-    saveValues = (user: IUser): IUser => {
-        debugger;
+    saveValues = (user: IUser) => {
         this.user.lastName = user.lastName;
-        return this.user;
+       
     }
-
 
     showStep() {
  
-        switch (this.state.step) {
+        switch (this.state.currentStep) {
         case 1:
                 return <SectionOne    user={this.user} nextStep={this.nextStep} previousStep={this.previousStep}  saveValues={this.saveValues}/>;
         case 2:

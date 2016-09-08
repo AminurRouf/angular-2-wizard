@@ -1,11 +1,12 @@
-﻿export interface IFeesClaimExpenses {
+﻿export interface IFeesClaimExpensesProps {
     user: IUser;
     nextStep:()=>void;
     previousStep: () => void;
-    saveValues: (user:IUser) => IUser;
+    saveValues: (user:IUser) => void;
 }
 
 export interface IUser {
+    firstName:string;
     lastName: string;
     
 }
