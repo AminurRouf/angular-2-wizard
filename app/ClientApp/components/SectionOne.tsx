@@ -25,7 +25,6 @@ export class SectionOne extends React.Component<IFeesClaimExpenses, {}> {
     }
 
     nextStep = () => {
-        debugger;
         
         let lastNameInput = ReactDom.findDOMNode<HTMLInputElement>(this.refs["lastName"]);
         this.user.lastName = lastNameInput.value;
