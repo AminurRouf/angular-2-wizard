@@ -1,19 +1,24 @@
 import * as React from 'react';
 import { SectionOne} from "./SectionOne";
 import { Confirmation} from "./Confirmation";
-import {IFeesClaimExpensesProps, IUser } from "../models/fees-claim-expenses";
+import { SectionTwo} from "./SectionTwo";
+import {IFeesClaimExpensesProps, IUser, ITaxDeclaration } from "../models/interfaces";
+import {FeesClaimExpenses, User, TaxDeclaration } from "../models/classes";
+
 
 interface IStepState {
     currentStep: number;
 }
 
-export class Home extends React.Component<IFeesClaimExpensesProps, IStepState> {
-   public user: IUser;
+export class Home extends React.Component<{}, IStepState> {
   
+    public fees: IFeesClaimExpensesProps;
+
     constructor(props) {
         super(props);
         this.state = { currentStep: 1 };
-        this.user = { lastName: '', firstName: '' };
+    
+        this.fees = new FeesClaimExpenses(new User, new TaxDeclaration); 
     }
     
     public render() {
@@ -27,27 +32,26 @@ export class Home extends React.Component<IFeesClaimExpensesProps, IStepState> {
         </div>;
     }
 
-    nextStep=()=> {
-        this.setState({ currentStep: this.state.currentStep+1 });
-    };
+    nextStep=()=> {this.setState({ currentStep: this.state.currentStep+1 });};
 
-    previousStep = () => {
-        this.setState({ currentStep: this.state.currentStep-1 });
-    };
+    previousStep = () => { this.setState({ currentStep: this.state.currentStep-1 }); };
 
-    saveValues = (user: IUser) => {
-        this.user.lastName = user.lastName;
-       
-    }
+    saveUser = (user: IUser) => {this.fees.user = user;}
+
+    saveTaxDeclaration = (taxDeclaration: ITaxDeclaration) => {this.fees.taxDeclaration = taxDeclaration;}
 
     showStep() {
- 
         switch (this.state.currentStep) {
-        case 1:
-                return <SectionOne    user={this.user} nextStep={this.nextStep} previousStep={this.previousStep}  saveValues={this.saveValues}/>;
+            case 1:
+     
+                return <SectionOne  user={this.fees.user} nextStep={this.nextStep} previousStep={this.previousStep}  saveUser={this.saveUser}/>;
         case 2:
-                return <Confirmation  user={this.user} nextStep={this.nextStep} previousStep={this.previousStep} saveValues={this.saveValues} />;
-                default :
+                return <SectionTwo  taxDeclaration={this.fees.taxDeclaration}  nextStep={this.nextStep} previousStep={this.previousStep} saveTaxDeclaration={this.saveTaxDeclaration} />;
+        case 3:
+                debugger;
+                return <Confirmation  user={this.fees.user}  taxDeclaration={this.fees.taxDeclaration} nextStep={this.nextStep} previousStep={this.previousStep}  />;
+
+        default:
                     return null;
         }
     };
