@@ -18,6 +18,8 @@ export class AddressForm extends React.Component<FeesProp, void> {
             <p>Address Form</p>
 
             <p>Current step: <strong>{ this.props.step }</strong></p>
+
+            <input type="text" value={this.props.fees.address.street}/>
             <button onClick={ () => { this.props.next(); } }>Next</button>
           
            

@@ -50,7 +50,7 @@ export const actionCreators = {
     next: (): ActionCreator => (dispatch, getState) => {
         console.log(getState().feesClaimExpenses.step);
        
-        dispatch(new NextStep());
+        dispatch(new NextStep);
     }
 };
 
@@ -58,7 +58,11 @@ export const actionCreators = {
 // REDUCER - For a given state and action, returns the new state. To support time travel, this must not mutate the old state.
 export const reducer: Reducer<FeesState> = (state, action) => {
 
+
     if (isActionType(action, NextStep)) {
+        debugger;
+
+            let fees = state.fees;
         let newstate = { step: state.step + 1, fees: new Fees(new Address(), new Person()) };
         return newstate;
     }
