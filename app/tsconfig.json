@@ -3,9 +3,9 @@
     "moduleResolution": "node",
     "target": "es6",
     "jsx": "preserve",
+    "experimentalDecorators": true,
     "sourceMap": true,
-    "skipDefaultLibCheck": true,
-    "experimentalDecorators": true
+    "skipDefaultLibCheck": true
   },
   "exclude": [
       "node_modules"

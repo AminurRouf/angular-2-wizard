@@ -1,56 +1,49 @@
 import * as React from 'react';
-import { SectionOne} from "./SectionOne";
-import { Confirmation} from "./Confirmation";
-import { SectionTwo} from "./SectionTwo";
-import {IFeesClaimExpensesProps, IUser, ITaxDeclaration } from "../models/interfaces";
-import {FeesClaimExpenses, User, TaxDeclaration } from "../models/classes";
+import { AddressForm} from "./AddressForm";
+import { UserForm} from "./UserForm";
+import { FeesState, Fees, Address, Person} from '../store/FeesClaimExpenses';
+
+import { provide } from 'redux-typed';
+import { ApplicationState }  from '../store/index';
+import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
 
 
-interface IStepState {
-    currentStep: number;
-}
 
-export class Home extends React.Component<{}, IStepState> {
-  
-    public fees: IFeesClaimExpensesProps;
-
-    constructor(props) {
-        super(props);
-        this.state = { currentStep: 1 };
-    
-        this.fees = new FeesClaimExpenses(new User, new TaxDeclaration); 
-    }
-    
+export class Home extends React.Component<FeesProp, FeesState> {
+   
     public render() {
         return <div>
             <h1>Fees Claim Expenses Form</h1>
             <main>
-                <span className="progress-step">Step {this.state.currentStep}</span>
+                <span>Home Form Step {this.props.step}</span>
 
                 {this.showStep() }
             </main>
         </div>;
     }
-
-    nextStep=()=> {this.setState({ currentStep: this.state.currentStep+1 });};
-
-    previousStep = () => { this.setState({ currentStep: this.state.currentStep-1 }); };
-
-    saveUser = (user: IUser) => {this.fees.user = user;}
-
-    saveTaxDeclaration = (taxDeclaration: ITaxDeclaration) => {this.fees.taxDeclaration = taxDeclaration;}
-
     showStep() {
-        switch (this.state.currentStep) {
+        switch (this.props.step) {
             case 1:
-                return <SectionOne  user={this.fees.user} nextStep={this.nextStep} previousStep={this.previousStep}  saveUser={this.saveUser}/>;
+                return <AddressForm next={this.props.next} {...this.props}/>;
             case 2:
-                return <SectionTwo  taxDeclaration={this.fees.taxDeclaration}  nextStep={this.nextStep} previousStep={this.previousStep} saveTaxDeclaration={this.saveTaxDeclaration} />;
-            case 3:
-                return <Confirmation  user={this.fees.user}  taxDeclaration={this.fees.taxDeclaration} nextStep={this.nextStep} previousStep={this.previousStep}  />;
-
-        default:
-                    return null;
+                return <UserForm next={this.props.next} {...this.props}/>;
+           
+            default:
+                return null;
         }
     };
+
+
+
 }
+
+
+// Build the CounterProps type, which allows the component to be strongly typed
+const provider = provide(
+    (state: ApplicationState) => state.feesClaimExpenses, // Select which part of global state maps to this component
+    FeesClaimExpensesStore.actionCreators                 // Select which action creators should be exposed to this component
+);
+type FeesProp = typeof provider.allProps;
+
+
+export default provider.connect(Home);

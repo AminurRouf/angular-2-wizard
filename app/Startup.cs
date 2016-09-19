@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 
-namespace FeesExpensesClaimForm
+namespace ReduxFeesClaimExpenses
 {
     public class Startup
     {
