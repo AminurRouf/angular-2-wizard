@@ -6,6 +6,7 @@
     previousStep: () => void;
     saveUser?: (user: IUser) => void;
     saveTaxDeclaration?: (taxDeclaration: ITaxDeclaration) => void;
+
 }
 
 export interface IUser {

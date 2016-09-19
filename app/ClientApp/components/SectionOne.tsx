@@ -19,6 +19,7 @@ export class SectionOne extends React.Component<IFeesClaimExpensesProps, {}> {
             <h1>Section One</h1>
             
             <p>Personal Information </p>
+
             <input type="label" ref="lastName" defaultValue={this.props.user.lastName} />
 
             <li className="form-footer list-unstyled">

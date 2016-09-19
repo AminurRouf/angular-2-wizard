@@ -43,12 +43,10 @@ export class Home extends React.Component<{}, IStepState> {
     showStep() {
         switch (this.state.currentStep) {
             case 1:
-     
                 return <SectionOne  user={this.fees.user} nextStep={this.nextStep} previousStep={this.previousStep}  saveUser={this.saveUser}/>;
-        case 2:
+            case 2:
                 return <SectionTwo  taxDeclaration={this.fees.taxDeclaration}  nextStep={this.nextStep} previousStep={this.previousStep} saveTaxDeclaration={this.saveTaxDeclaration} />;
-        case 3:
-                debugger;
+            case 3:
                 return <Confirmation  user={this.fees.user}  taxDeclaration={this.fees.taxDeclaration} nextStep={this.nextStep} previousStep={this.previousStep}  />;
 
         default:
