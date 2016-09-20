@@ -1,6 +1,6 @@
 import { typeName, isActionType, Action, Reducer } from 'redux-typed';
 import { ActionCreator } from  './index';
-import {fromJS} from 'immutable'
+import * as immutable from 'immutable';
 
 
 // -----------------
@@ -8,7 +8,7 @@ import {fromJS} from 'immutable'
 
 export  interface FeesState {
     step: number;
-    fees:Fees;
+    fees: Fees;
     
 }
 
@@ -69,7 +69,8 @@ export const reducer: Reducer<FeesState> = (state, action) => {
 
 
     if (isActionType(action, NextStep)) {
-        return { step: state.step + 1, fees: state.fees };;
+
+        return { step: state.step + 1, fees: state.fees };
     }
 
     if (isActionType(action, PreviousStep)) {
