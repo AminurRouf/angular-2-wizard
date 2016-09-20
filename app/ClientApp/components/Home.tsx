@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AddressForm} from "./AddressForm";
 import { UserForm} from "./UserForm";
+import { ConfirmationForm} from "./ConfirmationForm";
 import { FeesState, Fees, Address, Person} from '../store/FeesClaimExpenses';
 
 import { provide } from 'redux-typed';
@@ -24,9 +25,11 @@ export class Home extends React.Component<FeesProp, FeesState> {
     showStep() {
         switch (this.props.step) {
             case 1:
-                return <AddressForm next={this.props.next} {...this.props}/>;
+                return <AddressForm {...this.props}/>;
             case 2:
-                return <UserForm next={this.props.next} {...this.props}/>;
+                return <UserForm {...this.props}/>;
+            case 3:
+                return <ConfirmationForm  {...this.props}/>;
            
             default:
                 return null;

@@ -17,7 +17,8 @@
     "typescript": "^2.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.10.0",
+    "immutable": "^3.8.1"
   },
   "dependencies": {
     "aspnet-prerendering": "^1.0.2",

@@ -4,23 +4,34 @@ import { Link } from 'react-router';
 import { provide } from 'redux-typed';
 import { ApplicationState }  from '../store/index';
 import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
-import {  Fees, Address, Person, FeesState} from '../store/FeesClaimExpenses';
+import {  Fees,  Person, FeesState} from '../store/FeesClaimExpenses';
 
 
 export class UserForm extends React.Component<FeesProp, FeesState> {
  
     public render() {
-        debugger;
         return <div>
-            <h1>Counter</h1>
-
-            <p>User Form</p>
+            <h2>User Form</h2>
+            <p>Address: {this.props.fees.address.street}</p>
 
             <p>Current step: <strong>{ this.props.step }</strong></p>
-            <button onClick={ () => { this.props.next(); } }>Next</button>
 
-
+            <label> Name </label> <input type="text" ref="name" defaultValue={this.props.fees.person.name}/>
+            <br/>
+         
+            <button onClick={ this.back}>Save and Back</button>
+            <button onClick={ this.next}>Save and Next</button>
         </div>;
+    }
+
+    next = () => {
+        this.props.fees.person.name = ReactDom.findDOMNode<HTMLInputElement>(this.refs["name"]).value;
+        this.props.next();
+    }
+
+    back = () => {
+        this.props.fees.person.name = ReactDom.findDOMNode<HTMLInputElement>(this.refs["name"]).value;
+        this.props.back();
     }
 
 }

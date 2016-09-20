@@ -7,33 +7,29 @@ import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
 import {  Fees, Address, Person, FeesState} from '../store/FeesClaimExpenses';
 
 
-export class AddressForm extends React.Component<FeesProp, void> {
+export class ConfirmationForm extends React.Component<FeesProp, void> {
   
     public render() {
 
         return <div>
+            
+            <h2>Confirmation Form</h2>
 
-
-            <h2>Address Form</h2>
+         
 
             <p>Current step: <strong>{ this.props.step }</strong></p>
 
-            <label> Street </label> <input type="text" ref="street"  defaultValue={this.props.fees.address.street}/>
-            <br/>
+            <p>Name: {this.props.fees.person.name}</p>
+            <p>Address: {this.props.fees.address.street}</p>
 
-            <button onClick={ this.next}>Save and Next</button>
+            <button onClick={ this.props.back}>Back</button>
     
           
            
         </div>;
     }
 
-    next = () => {
-        this.props.fees.address.street = ReactDom.findDOMNode<HTMLInputElement>(this.refs["street"]).value;
-        this.props.next();
-    }
-
-
+ 
 }
 
 // Build the CounterProps type, which allows the component to be strongly typed
@@ -42,4 +38,4 @@ const provider = provide(
     FeesClaimExpensesStore.actionCreators                 // Select which action creators should be exposed to this component
 );
 type FeesProp = typeof provider.allProps;
-export default provider.connect(AddressForm);
+export default provider.connect(ConfirmationForm);

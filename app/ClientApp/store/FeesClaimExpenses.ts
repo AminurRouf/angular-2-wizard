@@ -1,5 +1,6 @@
 import { typeName, isActionType, Action, Reducer } from 'redux-typed';
-import { ActionCreator } from './index';
+import { ActionCreator } from  './index';
+import {fromJS} from 'immutable'
 
 
 // -----------------
@@ -41,6 +42,12 @@ class NextStep extends Action {
 
 }
 
+@typeName("PREVIOUS_STEP")
+class PreviousStep extends  Action {
+
+}
+
+
 
 // ----------------
 // ACTION CREATORS - These are functions exposed to UI components that will trigger a state transition.
@@ -48,11 +55,13 @@ class NextStep extends Action {
 
 export const actionCreators = {
     next: (): ActionCreator => (dispatch, getState) => {
-        console.log(getState().feesClaimExpenses.step);
-       
         dispatch(new NextStep);
+    },
+    back: (): ActionCreator => (dispatch, getState) => {
+        dispatch(new PreviousStep);
     }
 };
+
 
 // ---------------- 
 // REDUCER - For a given state and action, returns the new state. To support time travel, this must not mutate the old state.
@@ -60,13 +69,12 @@ export const reducer: Reducer<FeesState> = (state, action) => {
 
 
     if (isActionType(action, NextStep)) {
-        debugger;
-
-            let fees = state.fees;
-        let newstate = { step: state.step + 1, fees: new Fees(new Address(), new Person()) };
-        return newstate;
+        return { step: state.step + 1, fees: state.fees };;
     }
 
+    if (isActionType(action, PreviousStep)) {
+        return { step: state.step - 1, fees: state.fees };;
+    }
     // For unrecognized actions (or in cases where actions have no effect), must return the existing state
     //  (or default initial state if none was supplied)
     return state || { step: 1, fees: new Fees(new Address(), new Person()) };
