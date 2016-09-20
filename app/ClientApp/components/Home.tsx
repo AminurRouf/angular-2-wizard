@@ -2,14 +2,14 @@ import * as React from 'react';
 import { AddressForm} from "./AddressForm";
 import { UserForm} from "./UserForm";
 import { ConfirmationForm} from "./ConfirmationForm";
-import { FeesState, Fees, Address, Person} from '../store/FeesClaimExpenses';
+
 
 import { provide } from 'redux-typed';
 import { ApplicationState }  from '../store/index';
 import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
 
 
-export class Home extends React.Component<FeesProp, FeesState> {
+export class Home extends React.Component<FeesProp, void> {
    
     public render() {
         return <div>
@@ -27,9 +27,9 @@ export class Home extends React.Component<FeesProp, FeesState> {
     showStep() {
         switch (this.props.step) {
             case 1:
-                return <AddressForm {...this.props}/>;
+                return <AddressForm address= {this.props.fees.address} {...this.props} />;
             case 2:
-                return <UserForm {...this.props}/>;
+                return <UserForm person= {this.props.fees.person}  {...this.props}/>;
             case 3:
                 return <ConfirmationForm  {...this.props}/>;
            

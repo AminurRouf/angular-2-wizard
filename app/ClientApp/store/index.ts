@@ -4,7 +4,8 @@ import * as FeesClaimExpenses from './FeesClaimExpenses';
 // The top-level state object
 export interface ApplicationState {
     feesClaimExpenses: FeesClaimExpenses.FeesState,
-
+    address: FeesClaimExpenses.AddressState,
+    person: FeesClaimExpenses.PersonState,
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using

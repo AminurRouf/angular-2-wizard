@@ -12,6 +12,16 @@ export  interface FeesState {
     
 }
 
+export interface AddressState {
+    address: Address;
+
+}
+
+export interface PersonState {
+    person: Person;
+
+}
+
 export class Fees {
     constructor(address?: Address, person?: Person) {
 
@@ -69,7 +79,6 @@ export const reducer: Reducer<FeesState> = (state, action) => {
 
 
     if (isActionType(action, NextStep)) {
-
         return { step: state.step + 1, fees: state.fees };
     }
 
@@ -80,3 +89,5 @@ export const reducer: Reducer<FeesState> = (state, action) => {
     //  (or default initial state if none was supplied)
     return state || { step: 1, fees: new Fees(new Address(), new Person()) };
 };
+
+
