@@ -25,13 +25,17 @@ export class UserForm extends React.Component<FeesProp, FeesState> {
     }
 
     next = () => {
-        this.props.fees.person.name = ReactDom.findDOMNode<HTMLInputElement>(this.refs["name"]).value;
+        this.saveFormInput();
         this.props.next();
     }
 
     back = () => {
-        this.props.fees.person.name = ReactDom.findDOMNode<HTMLInputElement>(this.refs["name"]).value;
+        this.saveFormInput();
         this.props.back();
+    }
+
+    saveFormInput() {
+        this.props.fees.person.name = ReactDom.findDOMNode<HTMLInputElement>(this.refs["name"]).value;
     }
 
 }

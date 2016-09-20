@@ -9,7 +9,6 @@ import { ApplicationState }  from '../store/index';
 import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
 
 
-
 export class Home extends React.Component<FeesProp, FeesState> {
    
     public render() {
@@ -18,10 +17,13 @@ export class Home extends React.Component<FeesProp, FeesState> {
             <main>
                 <span>Home Form Step {this.props.step}</span>
 
-                {this.showStep() }
+                {
+                    this.showStep()
+                }
             </main>
         </div>;
     }
+
     showStep() {
         switch (this.props.step) {
             case 1:
@@ -35,7 +37,6 @@ export class Home extends React.Component<FeesProp, FeesState> {
                 return null;
         }
     };
-
 
 
 }

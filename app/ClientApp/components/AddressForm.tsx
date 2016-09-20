@@ -12,8 +12,6 @@ export class AddressForm extends React.Component<FeesProp, void> {
     public render() {
 
         return <div>
-
-
             <h2>Address Form</h2>
 
             <p>Current step: <strong>{ this.props.step }</strong></p>
@@ -24,7 +22,6 @@ export class AddressForm extends React.Component<FeesProp, void> {
             <button onClick={ this.next}>Save and Next</button>
     
           
-           
         </div>;
     }
 
