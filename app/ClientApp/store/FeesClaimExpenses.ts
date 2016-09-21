@@ -83,14 +83,14 @@ export const reducer: Reducer<FeesState> = (state, action) => {
   
 
     if (isActionType(action, NextStep)) {
-       let rec= getFeesRecord(state);
-       return { step: state.step + 1, fees: rec };
+       let feesRecord= getFeesRecord(state);
+       return { step: state.step + 1, fees: feesRecord };
       // return { step: state.step+1, fees: state.fees };
     }
 
     if (isActionType(action, PreviousStep)) {
-        let rec = getFeesRecord(state);
-        return { step: state.step - 1, fees: rec };
+        let feesRecord = getFeesRecord(state);
+        return { step: state.step - 1, fees: feesRecord };
        // return { step: state.step - 1, fees: state.fees };;
     }
 
