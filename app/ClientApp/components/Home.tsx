@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AddressForm} from "./AddressForm";
+import {  AddressForm} from "./AddressForm";
 import { UserForm} from "./UserForm";
 import { ConfirmationForm} from "./ConfirmationForm";
 
@@ -32,6 +32,8 @@ export class Home extends React.Component<FeesProp, void> {
                 return <UserForm person= {this.props.fees.person}  {...this.props}/>;
             case 3:
                 return <ConfirmationForm  {...this.props}/>;
+            case 4:
+             
            
             default:
                 return null;
