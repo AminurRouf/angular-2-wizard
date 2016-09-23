@@ -2,6 +2,7 @@ import { typeName, isActionType, Action, Reducer } from 'redux-typed';
 import { ActionCreator } from  './index';
 import * as Immutable from 'immutable';
 import {recordify, TypedRecord} from 'typed-immutable-record';
+import {validate, Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
 
 // -----------------
 // STATE - This defines the type of data maintained in the Redux store.
@@ -15,6 +16,7 @@ export  interface FeesState {
 
 export interface AddressState {
     address: Address;
+    handleSubmit?: any;
 }
 
 export interface PersonState {
@@ -38,7 +40,9 @@ export class Fees implements IFees {
 }
 
 export class Address {
-    houseNumber:number;
+
+    houseNumber: number;
+    @Length(10, 20)
     street: string;
 }
 

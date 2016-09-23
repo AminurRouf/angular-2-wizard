@@ -32,6 +32,12 @@
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
     },
+    "redux-form/redux-form.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
+    },
+    "react-bootstrap-validation/react-bootstrap-validation.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
+    },
     "uglify-js/uglify-js.d.ts": {
       "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
     },

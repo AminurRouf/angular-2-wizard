@@ -34,8 +34,8 @@ export class ConfirmationForm extends React.Component<FeesProp, void> {
 
 // Build the CounterProps type, which allows the component to be strongly typed
 const provider = provide(
-    (state: ApplicationState) => state.feesClaimExpenses, // Select which part of global state maps to this component
-    FeesClaimExpensesStore.actionCreators                 // Select which action creators should be exposed to this component
+    (state: ApplicationState) => state.feesClaimExpenses, 
+    {back: FeesClaimExpensesStore.actionCreators.back }               
 );
 type FeesProp = typeof provider.allProps;
 export default provider.connect(ConfirmationForm);

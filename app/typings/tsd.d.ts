@@ -11,3 +11,5 @@
 /// <reference path="source-map/source-map.d.ts" />
 /// <reference path="uglify-js/uglify-js.d.ts" />
 /// <reference path="webpack/webpack-env.d.ts" />
+/// <reference path="redux-form/redux-form.d.ts" />
+/// <reference path="classnames/classnames.d.ts" />

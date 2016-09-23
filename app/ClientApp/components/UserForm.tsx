@@ -40,7 +40,10 @@ export class UserForm extends React.Component<PersonProp, void> {
 // Build the CounterProps type, which allows the component to be strongly typed
 const provider = provide(
     (state: ApplicationState) => state.person, // Select which part of global state maps to this component
-    FeesClaimExpensesStore.actionCreators                 // Select which action creators should be exposed to this component
+    {
+        next: FeesClaimExpensesStore.actionCreators.next,
+        back: FeesClaimExpensesStore.actionCreators.back
+    }                 // Select which action creators should be exposed to this component
 );
 type PersonProp = typeof provider.allProps;
 export default provider.connect(UserForm);
