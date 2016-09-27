@@ -1,7 +1,8 @@
 import { ActionCreatorGeneric } from 'redux-typed';
-import * as FeesClaimExpenses from './FeesClaimExpenses';
+import * as FeesClaimExpenses from './fees-claim-expenses';
 import { reducer as reduxForm } from 'redux-form'
 import { createStore, combineReducers } from 'redux'
+import * as Reducers from './reducers';
 
 // The top-level state object
 export interface ApplicationState {
@@ -14,7 +15,7 @@ export interface ApplicationState {
 // the reducer with the matching name. It's important that the names match exactly, and that the reducer
 // acts on the corresponding ApplicationState property type.
 export const reducers = {
-    feesClaimExpenses: FeesClaimExpenses.reducer,
+    feesClaimExpenses: Reducers.reducer,
     form: reduxForm
 };
 

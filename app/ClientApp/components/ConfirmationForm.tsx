@@ -3,9 +3,9 @@ import * as ReactDom from 'react-dom';
 import { Link } from 'react-router';
 import { provide } from 'redux-typed';
 import { ApplicationState }  from '../store/index';
-import * as FeesClaimExpensesStore from '../store/FeesClaimExpenses';
-import {  Fees, Address, Person, FeesState} from '../store/FeesClaimExpenses';
 
+import {  Fees, Address, Person, FeesState} from '../store/fees-claim-expenses';
+import * as ActionCreator from '../store/actions';
 
 export class ConfirmationForm extends React.Component<FeesProp, void> {
   
@@ -35,7 +35,7 @@ export class ConfirmationForm extends React.Component<FeesProp, void> {
 // Build the CounterProps type, which allows the component to be strongly typed
 const provider = provide(
     (state: ApplicationState) => state.feesClaimExpenses, 
-    {back: FeesClaimExpensesStore.actionCreators.back }               
+    {back: ActionCreator.actionCreators.back }               
 );
 type FeesProp = typeof provider.allProps;
 export default provider.connect(ConfirmationForm);
