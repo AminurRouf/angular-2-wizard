@@ -1,17 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - ReduxFeesClaimExpenses</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Application Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/dist/site.css" asp-append-version="true" />
-    </head>
-    <body>
+     <base href="/" />
+     <link rel="stylesheet" href="~/ncl_style/css/app.css">
+    
+     <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+     <!--<link rel="stylesheet" href="~/dist/styles.css" asp-append-version="true" />-->
+
+  </head>
+  <body>
+    <header id="header" role="banner">
+
+        <div class="container">
+
+          <a href="http://www.ncl.ac.uk" class="logo" accesskey="1"><img src="ncl_style/img/logo.svg" alt="Newcastle University logo" title="Newcastle University"></a>
+
+          <!-- END of logo -->
+
+          <a id="toggle-menu" class="btn-toggle" href="#">Toggle Main Menu</a>
+
+          <nav>
+
+                <ul class="menu-main-nav">
+                    <li><a href="http://www.ncl.ac.uk/about/">About</a></li>
+                    <li><a href="http://www.ncl.ac.uk/research/">Research</a></li>
+                    <li><a href="http://www.ncl.ac.uk/study/">Study</a></li>
+                    <li><a href="http://www.ncl.ac.uk/international/">International</a></li>
+                    <li><a href="http://www.ncl.ac.uk/engagement/">Engage</a></li>
+                    <li><a href="http://www.ncl.ac.uk/staffandstudents/">Staff &amp; Students</a></li>
+                </ul>
+
+            </nav>
+
+            <!-- END of main menu -->
+
+        </div>
+
+    </header>
+
+    <!-- END of header -->
+
+
+
+    <div class="container">
+
         @RenderBody()
 
-        <script src="~/dist/vendor.js" asp-append-version="true"></script>
         @RenderSection("scripts", required: false)
-    </body>
+
+    </div>
+
+    <div class="footer-border"></div>
+
+    <div class="container">
+
+    <footer>
+
+        <div>
+            <div class="links">
+                <ul>
+                  <li><a href="#">{ Application } Terms and Conditions</a></li>
+                    <li><a href="#">{ Application } Privacy Policy</a></li>
+                </ul>
+
+                <p>Newcastle University, NE1 7RU, United Kingdom, <br/>Telephone: (0191) 208 6000
+                From outside the UK dial +44 191 208 6000.</p>
+            </div>
+        </div>
+
+        <div class="social">
+            <h1 class="title">Connect with us</h1>
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/studentsncl">Twitter</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/newcastleuniversity">Facebook</a></li>
+                <li class="youtube"><a href="https://www.youtube.com/user/newcastleuniofficial">YouTube</a></li>
+                <li class="podcasts"><a href="http://itunes.apple.com/gb/institution/newcastle-university/id432475835">iTunes</a></li>
+            </ul>
+            <p><a href="http://www.ncl.ac.uk/info/socialmedia/">Social media directory</a></p>
+        </div>
+
+        <div>
+            <div class="global-ft-links">
+                <ul>
+                    <li><a accesskey="3" href="//www.ncl.ac.uk/sitemap/">University site index</a></li>
+                    <li><a href="http://www.ncl.ac.uk/info/accessibility/">Accessibility</a></li>
+                    <li><a href="http://www.ncl.ac.uk/info/legal/">Legal</a></li>
+                    <li><a href="http://www.ncl.ac.uk/foi/">Freedom of information</a></li>
+                    <li><a href="http://www.ncl.ac.uk/info/photos.html">Photography Credits</a></li>
+                </ul>
+            </div>
+
+            <div class="last-updated">
+                <p><a href="http://www.ncl.ac.uk/info/legal/copyright.html">&copy; 2016 Newcastle University</a></p>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+    <!-- END of footer -->
+
+
+    <script src="ncl_style/js/modernizr.js"></script>
+
+  </body>
 </html>

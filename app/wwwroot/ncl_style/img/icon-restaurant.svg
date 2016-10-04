@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="45px" height="45px" viewBox="0 0 45 45" overflow="visible" enable-background="new 0 0 45 45"
+	 xml:space="preserve">
+<defs>
+</defs>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#CF0072" d="M0,22.5C0,10.07,10.07,0,22.5,0S45,10.07,45,22.5S34.93,45,22.5,45
+	S0,34.93,0,22.5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M11.48,7.02c0.63,0,1.15,0.51,1.15,1.14v12.4
+	c0,0.63-0.52,1.14-1.15,1.14c-0.64,0-1.16-0.51-1.16-1.14V8.16C10.32,7.53,10.84,7.02,11.48,7.02z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M16.1,7.02c0.64,0,1.15,0.51,1.15,1.14v12.4
+	c0,0.63-0.51,1.14-1.15,1.14s-1.16-0.51-1.16-1.14V8.16C14.94,7.53,15.46,7.02,16.1,7.02z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M20.72,7.02c0.64,0,1.16,0.51,1.16,1.14v12.4
+	c0,0.63-0.52,1.14-1.16,1.14c-0.64,0-1.16-0.51-1.16-1.14V8.16C19.56,7.53,20.08,7.02,20.72,7.02z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M11.41,16.32v5.38h8.83v-5.38h-0.68v0.06
+	c0,0.64-0.51,1.15-1.15,1.15c-0.64,0-1.16-0.51-1.16-1.15v-0.06h-2.31v0.06c0,0.64-0.51,1.15-1.15,1.15s-1.16-0.51-1.16-1.15v-0.06
+	H11.41z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M16.17,19.01c1.12,0,2.04,0.9,2.04,2.02V37.2
+	c0,1.12-0.92,2.02-2.04,2.02c-1.13,0-2.04-0.9-2.04-2.02V21.03C14.13,19.91,15.04,19.01,16.17,19.01z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M30.58,7.02c1.12,0,2.03,0.9,2.03,2.02V37.2
+	c0,1.12-0.91,2.02-2.03,2.02c-1.13,0-2.04-0.9-2.04-2.02V9.04C28.54,7.92,29.45,7.02,30.58,7.02z"/>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="28.67,8.23 24.05,21.7 29.49,21.7 "/>
+</svg>
