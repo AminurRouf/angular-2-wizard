@@ -38,6 +38,7 @@
     "webpack-externals-plugin": "^1.0.0",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-merge": "^0.14.1",
-    "zone.js": "^0.6.21"
+    "zone.js": "^0.6.21",
+    "webpack-node-externals": "^1.4.3"
   }
 }
