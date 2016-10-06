@@ -1,6 +1,11 @@
 "An example multi step form using Angular 2 which posts data to .net core web api" 
 
-# Why Angualr 2
+# Demo
+https://ng2-wizard.azurewebsites.net
+
+using instructions from http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/
+
+# Why Angular 2
 
 * Good docs https://angular.io/docs/ts/latest/
 * Forms and validation are baked right into the framework :thumbsup:
