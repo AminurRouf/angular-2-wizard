@@ -15,9 +15,12 @@
 Project was generated with [JavascriptServices](https://github.com/aspnet/JavaScriptServices). 
 Instructions on how to build and deploy can be found there.
 
-#Other Useful Links
+# Other Useful Links
 http://blog.stevensanderson.com/ - Instructions on using JavascriptServices and how to use Angular 2 template for Visual Studio.
-How to write [Custom Validation](https://scotch.io/tutorials/how-to-implement-a-custom-validator-directive-confirm-password-in-angular-2) for template driven forms. 
 
+[Custom Validation](https://scotch.io/tutorials/how-to-implement-a-custom-validator-directive-confirm-password-in-angular-2) -How to write validation for template driven forms. 
 
+[All things form related](http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/) - Guide on angular 2 forms
+
+[Class Validator](https://github.com/pleerock/class-validator) - Validation made easy using Typescript decorators
 
