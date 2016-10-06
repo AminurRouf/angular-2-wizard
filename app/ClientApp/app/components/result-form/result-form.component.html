@@ -1,0 +1,21 @@
+
+<div class="container">
+ <h3>Result</h3>
+    <form (ngSubmit)="submit()" >
+        <div> <label>Name is: </label> {{personalInfo.name}}
+        </div>
+        <div> <label>Name is: </label> {{personalInfo.email}} </div>
+        <div> <label>First Job?: </label> {{taxDeclaration.isFirstJob}}
+        </div>
+
+        <div *ngIf="submissionMessage?.length > 0">
+            <p class="alert alert-info">{{submissionMessage}}</p>
+
+
+        </div>
+
+
+        <button class="btn btn-default" type="button" (click)="back()">Back</button>
+        <button   class="btn btn-default" type="submit" >Submit</button>
+    </form>
+</div>
