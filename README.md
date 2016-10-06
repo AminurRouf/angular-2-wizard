@@ -1,4 +1,4 @@
-"An example multi step form using Angualr 2 which submits data to .net core web api" 
+"An example multi step form using Angular 2 which posts data to .net core web api" 
 
 # Why Angualr 2
 
