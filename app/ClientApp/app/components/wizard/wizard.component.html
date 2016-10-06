@@ -1,0 +1,6 @@
+
+<personal-info-form *ngIf ="wizard.currentStep === 1" [onNext]="onNext"> </personal-info-form>
+
+<tax-declaration-form *ngIf="wizard.currentStep === 2" [onNext]="onNext" [onBack]="onBack"></tax-declaration-form>
+
+<result-form *ngIf="wizard.currentStep === 3" [onBack]="onBack"></result-form>

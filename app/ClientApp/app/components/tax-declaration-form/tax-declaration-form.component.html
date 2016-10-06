@@ -1,0 +1,14 @@
+
+<div class="container">
+ <h3>Section 2 - Tax Form Declaration</h3>
+    <form (ngSubmit)="submit()">
+      <div class="checkbox">
+          <label for="isFirstJob">
+              <input type="checkbox" id="isFirstJob" name="isFirstJob" [(ngModel)]="taxDeclaration.isFirstJob">Is First Job
+          </label>
+      </div>
+
+        <button class="btn btn-default" type="button" (click)="back()">Back</button>
+        <button class="btn btn-default" type="submit">Next</button>
+    </form>
+</div>

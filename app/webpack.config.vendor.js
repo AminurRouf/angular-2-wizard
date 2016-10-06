@@ -1,8 +1,8 @@
+var isDevBuild = process.argv.indexOf('--env.prod') < 0;
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractCSS = new ExtractTextPlugin('vendor.css');
-var isDevelopment = process.env.ASPNETCORE_ENVIRONMENT === 'Development';
 
 module.exports = {
     resolve: {
@@ -10,12 +10,29 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-            { test: /\.css/, loader: extractCSS.extract(['css']) }
+            { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, loader: 'url-loader?limit=100000' },
+            { test: /\.css(\?|$)/, loader: extractCSS.extract(['css']) }
         ]
     },
     entry: {
-        vendor: ['bootstrap', 'bootstrap/dist/css/bootstrap.css', 'react', 'react-dom', 'react-router', 'style-loader', 'jquery'],
+        vendor: [
+            '@angular/common',
+            '@angular/compiler',
+            '@angular/core',
+            '@angular/http',
+            '@angular/platform-browser',
+            '@angular/platform-browser-dynamic',
+            '@angular/router',
+            '@angular/platform-server',
+            'angular2-universal',
+            'angular2-universal-polyfills',
+            'bootstrap',
+            'bootstrap/dist/css/bootstrap.css',
+            'es6-shim',
+            'es6-promise',
+            'jquery',
+            'zone.js',
+        ]
     },
     output: {
         path: path.join(__dirname, 'wwwroot', 'dist'),
@@ -30,8 +47,7 @@ module.exports = {
             path: path.join(__dirname, 'wwwroot', 'dist', '[name]-manifest.json'),
             name: '[name]_[hash]'
         })
-    ].concat(isDevelopment ? [] : [
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+    ].concat(isDevBuild ? [] : [
+        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
     ])
 };

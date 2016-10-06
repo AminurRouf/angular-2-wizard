@@ -1,0 +1,38 @@
+
+<div class="container">
+ <h3>Section 1 - Personal Information - TO BE COMPLETED BY THE CLAIMANT</h3>
+    <form (ngSubmit)="submit()"  #personalInfoForm="ngForm" >
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" #firstName="ngModel"
+                   [(ngModel)]="personalInfo.name"
+                   required minlength="5" maxlength="8">
+            <small [hidden]="firstName.valid || firstName.pristine" class="text-danger">
+                Name is required (minimum 5 characters).
+            </small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="personalInfo.email"
+                   required #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+            <small [hidden]="email.valid || email.pristine" class="text-danger">
+                Email is required and format should be <i>john@doe.com</i>
+            </small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="">Confirm Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="personalInfo.confirmEmail"
+                   required #confirmEmail="ngModel" validateEqual="email" reverse="false">
+            <small [hidden]="confirmEmail.valid || email.pristine" class="text-danger">
+                Email mismatch.
+            </small>
+
+        </div>
+
+        <button   class="btn btn-default" type="submit" [disabled]="!personalInfoForm.form.valid">Next</button>
+    </form>
+</div>
