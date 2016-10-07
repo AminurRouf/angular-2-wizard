@@ -29,3 +29,5 @@ http://blog.stevensanderson.com/ - Instructions on using JavascriptServices and 
 
 [Class Validator](https://github.com/pleerock/class-validator) - Validation made easy using Typescript decorators
 
+[TypeWriter](https://github.com/frhagn/Typewriter) - C# to ts POCO generator
+
